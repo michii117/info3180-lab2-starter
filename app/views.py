@@ -25,6 +25,23 @@ def about():
     return render_template('about.html', name="Mary Jane")
 
 
+def format_date_joined(d):
+
+    day ="Joined " + d[0] + d[1]
+    return day
+
+
+@app.route('/profile')
+def profile():
+    """Render website's profile page."""
+    d = ["February, ","2022"]
+    return render_template('profile.html', date = format_date_joined(d))
+
+
+
+
+
+
 ###
 # The functions below should be applicable to all Flask apps.
 ###
